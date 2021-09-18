@@ -1,0 +1,60 @@
+
+<form class="form-signin" method="post" action="/edit">
+    
+    <div class="form-group">
+        <label class="sr-only" for="studentname">Student Name</label>
+        <input type="text" id="studentname" class="form-control" name="studentname" placeholder="Enter student name" value='<%= data.studentname %>' autocomplete="off" required disabled>
+      </div>
+      <div class="form-group">
+        <label class="sr-only" for="fathername">Father Name</label>
+        <input type="text" id="fathername" class="form-control" name="fathername" placeholder="Enter father name" value='<%= data.fathername %>' autocomplete="off" required disabled>
+      </div>
+      <div class="form-group">
+        <label for="sr-only" for="dob">DOB</label>
+        <input type="date " id="dob" class="form-control" value="<%= data.dob %>" name="dob" id="dob" placeholder="enter dob" autocomplete="off" required disabled>
+      </div>
+      <div class="form-group">
+        <label class="sr-only" for="address">Address</label>
+        <input type="address"  id="address" value="<%= data.address %>" class="form-control" value="<%= data.address %>" name="address" placeholder="Enter address" autocomplete="off" disabled >
+      </div>
+      <div class="form-group">
+        <label class="sr-only" for="city">City</label>
+        <input type="city" id="city" class="form-control" value="<%= data.city %>" name="city" placeholder="Enter city" autocomplete="off" disabled>
+      </div>
+      <div class="form-group">
+        <label class="sr-only" for="state">State</label>
+        <input type="state" id="state" class="form-control" value="<%= data.state %>" name="state" placeholder="Enter state" autocomplete="off" disabled>
+      </div>
+      <div class="form-group">
+        <label class="sr-only" for="pincode">Pin</label>
+        <input type="pincode" id="pincode" class="form-control" value="<%= data.pincode %>" minlength="6" maxlength="6" name="pincode" placeholder="Enter pincode" autocomplete="off" required disabled>
+      </div>
+      <div class="form-group">
+        <label class="sr-only" for="phonenumber">Phone Number</label>
+        <input type="phonenumber" id="phonenumber" class="form-control" value="<%= data.phonenumber %>" name="phonenumber" pattern="[1-9]{1}[0-9]{9}" placeholder="Enter phonenumber" autocomplete="off" required disabled>
+      </div>        
+    
+    <div class="form-group">
+      <label class="sr-only" for="email">Email address</label>
+      <input type="email" id="email" class="form-control" name="email" placeholder="Enter Email" value="<%= data.email %>" autocomplete="off" required disabled>
+    </div>
+
+    Class Opt:<select name="drop" value="<%= data.drop %>" id="drop" disabled>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+
+    <div class="form-group">
+      <label class="sr-only" for="marks">Marks %</label>
+      <input type="marks" id="marks" value="<%= data.marks %>" class="form-control" name="marks" placeholder="Enter marks" autocomplete="off" disabled>
+    </div>
+    
+    
+
+    <script>
+
+    </script>

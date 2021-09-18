@@ -1,0 +1,76 @@
+<% if(locals.error){ %>
+  <h2><%= error %></h2>    
+ <% } %>
+
+
+<form class="form-signin" method="post" action="/enroll">
+    <div class="form-group">
+        <label class="sr-only" for="studentname">Student Name</label>
+        <input type="text" id="studentname" class="form-control" name="studentname" placeholder="Enter student name" autocomplete="off" required>
+      </div>
+      <div class="form-group">
+        <label class="sr-only" for="fathername">Father Name</label>
+        <input type="text" id="fathername" class="form-control" name="fathername" placeholder="Enter father name" autocomplete="off" required>
+      </div>
+      <div class="form-group">
+        <label for="sr-only" for="dob">DOB</label>
+        <input type="date " id="dob" class="form-control"  name="dob" id="dob" placeholder="enter dob" required>
+      </div>
+      <div class="form-group">
+        <label class="sr-only" for="address">Address</label>
+        <input type="address"  id="address" class="form-control" name="address" placeholder="Enter address" autocomplete="off" >
+      </div>
+      <div class="form-group">
+        <label class="sr-only" for="city">City</label>
+        <input type="city" id="city" class="form-control" name="city" placeholder="Enter city" autocomplete="off">
+      </div>
+      <div class="form-group">
+        <label class="sr-only" for="state">State</label>
+        <input type="state" id="state" class="form-control" name="state" placeholder="Enter state" autocomplete="off">
+      </div>
+      <div class="form-group">
+        <label class="sr-only" for="pincode">Pin</label>
+        <input type="pincode" id="pincode" class="form-control"  minlength="6" maxlength="6" name="pincode" placeholder="Enter pincode" autocomplete="off" required>
+      </div>
+      <div class="form-group">
+        <label class="sr-only" for="phonenumber">Phone Number</label>
+        <input type="phonenumber" id="phonenumber" class="form-control" name="phonenumber" pattern="[1-9]{1}[0-9]{9}" placeholder="Enter phonenumber" autocomplete="off" required>
+      </div>        
+    
+    <div class="form-group">
+      <label class="sr-only" for="email">Email address</label>
+      <input type="email" id="email" class="form-control" name="email" placeholder="Enter Email" autocomplete="off" required>
+    </div>
+
+    Class Opt:<select name="drop" id="drop">
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+
+    <div class="form-group">
+      <label class="sr-only" for="marks">Marks %</label>
+      <input type="marks" id="marks" class="form-control" name="marks" placeholder="Enter marks" autocomplete="off">
+    </div>
+    <div class="form-group">
+      <label class="sr-only" for="date">date</label>
+      <input type="date"   class="form-control" name="date"  id="date" >
+    </div>
+    
+    <button class="btn btn-dark mt-3" type="submit">Submit</button>
+    <script>
+      
+        document.getElementById("date").valueAsDate=new Date();
+        document.getElementById("date").disabled=true;
+        var age=document.getElementById("dob").valueAsDate;
+        console.log(age,"age")
+        // if(age>=10){
+        //     return false;
+        // }else{
+        //     return age;
+        // }
+    </script>
+  </form>

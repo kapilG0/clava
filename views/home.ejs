@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enrollement app</title>
+</head>
+<body>
+    <h3 style="text-align: left;border: 2px solid black;">Enrollement app</h3>
+    
+    <button type="submit" onclick="location.href='/add'" style="float: right;" > New Student</button>
+    <br>
+    <table  class="" id="">
+        <thead>
+            <tr >
+                <th>Student Name</th>
+                <th>Father Name</th>
+                <th>DOB</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Pin</th>
+                <th>Phone Number</th>
+                <th>Email</th>
+                <th>Class opt</th>
+                <th>Marks</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if(data.length > 0) { %>
+                <% data.forEach(function(record){ %>
+                    <tr id=<%= record._id %>>
+                        <td id="studentname" onclick=notedit(this) ><%= record.studentname %></td>
+                        <td id="fathername"><%= record.fathername %></td>
+                        <td id="dob"><%= record.dob %></td>
+                        <td id="record"><%= record.address %></td>
+                        <td id="city"><%= record.city %></td>
+                        <td id="state"><%= record.state %></td>
+                        <td id="pincode"><%= record.pincode %></td>
+                        <td id="phonenumber"><%= record.phonenumber %></td>
+                        <td id="email"><%= record.email %></td>
+                        <td id="drop"><%= record.drop %></td>
+                        <td id="marks"><%= record.marks %></td>
+                        <td><input type="submit"  value="Edit" onclick=show(this) class="use-button"/></td>
+                    </tr>
+                <% })} else { %>
+                    <tr>
+                        <td>No record is present</td>
+                    </tr>
+                <% } %> 
+        </tbody>
+    </table>
+    <script>
+        function show(e){
+            console.log(e.parentNode.parentNode.id,'e')
+            var data=e.parentNode.parentNode.id
+            var URL
+            URL=data
+            console.log(location.href+"edit/"+URL,"url")
+            // return "edit/"+URL
+            window.location=location.href+"edit/"+URL
+        // document.querySelector('.use-button').addEventListener('click',function(event){
+        //     console.log(event,'event')
+        //     var item=event.target.parentNode.parentNode.id
+        //     var data=document.getElementById(item).querySelectorAll("#email")[0].innerHTML
+        //     console.log(item,data)
+            
+        }
+        
+        function notedit(e){
+            console.log(e.parentNode.id)
+            window.location=location.href+"show/"+e.parentNode.id
+        }
+    
+        
+        
+    </script>
+    
+</body>
+</html>
